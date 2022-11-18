@@ -25,17 +25,6 @@ constructor(
         return this.booksRepository.save(book);
     }
 
-    update(id: number, updateBook: Book){
-        let book : Book = new Book();
-        book.bookid = updateBook.bookid;
-        book.title = updateBook.title;
-        book.author = updateBook.author;
-        book.summary = updateBook.summary;
-        book.ISBN = updateBook.ISBN;
-        book.url = updateBook.url;
-        return this.booksRepository.save(book)
-    }
-
     delete(id: number): Observable<DeleteResult>{
         return from(this.booksRepository.delete(id))
     }
